@@ -5,7 +5,7 @@ from airflow.models import DAG
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.dummy_operator import DummyOperator
 
-from protos_gen import RunnerConfig, TestcaseConfig
+from protos_gen.config_pb2 import RunnerConfig, TestcaseConfig
 from operators.android_operator import AndroidStockOperator
 
 # TODO init RunnerConfig

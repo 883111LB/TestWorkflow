@@ -1,7 +1,9 @@
 import json
 
-from protos_gen import RunnerConfig, TestcaseConfig, TestExecutionRecord
-from utils import generate_id, base64_encode, LogChunkCache, config_plist, xctest_cmd, spawn_xcrun_log, parse_sim_log
+from protos_gen.config_pb2 import RunnerConfig, TestcaseConfig
+from protos_gen.record_pb2 import TestExecutionRecord
+from utils.base import generate_id, base64_encode, LogChunkCache
+from utils.ios import config_plist, xctest_cmd, spawn_xcrun_log, parse_sim_log
 
 if __name__ == '__main__':
     runner_conf = RunnerConfig()

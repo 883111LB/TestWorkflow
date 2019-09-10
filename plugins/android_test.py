@@ -1,8 +1,10 @@
 import json
 import re
 
-from protos_gen import RunnerConfig, TestcaseConfig, TestExecutionRecord
-from utils import generate_id, base64_encode, LogChunkCache, exec_adb_cmd, spawn_logcat, parse_logcat
+from protos_gen.config_pb2 import RunnerConfig, TestcaseConfig
+from protos_gen.record_pb2 import TestExecutionRecord
+from utils.base import LogChunkCache, base64_encode, generate_id
+from utils.adb import exec_adb_cmd, parse_logcat, spawn_logcat
 
 if __name__ == '__main__':
     runner_conf = RunnerConfig()

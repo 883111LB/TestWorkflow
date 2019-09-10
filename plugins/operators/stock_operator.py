@@ -2,7 +2,7 @@ from airflow.exceptions import AirflowException
 from airflow.utils.decorators import apply_defaults
 from airflow.models import BaseOperator
 
-from utils import generate_id
+from utils.base import generate_id
 
 class StockOperator(BaseOperator):
 	TAG_RECORD = 'TEST_RECORD'

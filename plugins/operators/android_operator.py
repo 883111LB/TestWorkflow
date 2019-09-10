@@ -5,8 +5,9 @@ from airflow.utils.decorators import apply_defaults
 
 from operators.stock_operator import StockOperator
 
-from protos_gen import TestExecutionRecord
-from utils import LogChunkCache, base64_encode, exec_adb_cmd, parse_logcat, spawn_logcat
+from protos_gen.record_pb2 import TestExecutionRecord
+from utils.base import LogChunkCache, base64_encode
+from utils.adb import exec_adb_cmd, parse_logcat, spawn_logcat
 
 class AndroidStockOperator(StockOperator):
 
