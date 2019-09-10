@@ -18,8 +18,3 @@ class StockOperator(BaseOperator):
 		self.runner_conf.runnerID = generate_id('RUN-')
 		if not self.runner_conf.IsInitialized():
 			raise AirflowException('RunnerConfig not init: %s' % str(self.runner_conf))
-		self.recorder.emit(self.TAG_EVENT, {
-			'jobID': self.runner_conf.jobID,
-			'runnerID': self.runner_conf.runnerID,
-			'state': 'start'
-		})

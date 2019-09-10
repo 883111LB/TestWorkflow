@@ -5,7 +5,7 @@ from airflow.models import DAG
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.dummy_operator import DummyOperator
 
-from protos_gen.config_pb2 import RunnerConfig, TestcaseConfig
+from protos_gen import RunnerConfig, TestcaseConfig
 from operators.android_operator import AndroidStockOperator
 
 # TODO init RunnerConfig
@@ -43,6 +43,10 @@ with DAG(
     run_this = AndroidStockOperator(
         task_id='adb_shell',
         provide_context=False,
+        apk_id='com.chi.ssetest',
+        apk_version='20190909_2031_1b8b37e',
+        apk_path='/usr/local/airflow/app-debug-androidTest.apk',
+        test_apk_path='/usr/local/airflow/app-debug.apk',
         runner_conf=runner_conf
     )
 
